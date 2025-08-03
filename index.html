@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jurnal Anak Hebat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Jurnal Harian Anak Indonesia Hebat</h1>
+
+  <form id="jurnalForm">
+    <fieldset>
+      <legend>1. Bangun Pagi</legend>
+      <label><input type="checkbox" id="bangunPagi"> Ya</label>
+      <input type="time" id="jamBangun">
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Beribadah</legend>
+      <div><label><input type="checkbox" id="subuh"> Subuh</label> <input type="time" id="jamSubuh"></div>
+      <div><label><input type="checkbox" id="dzuhur"> Dzuhur</label> <input type="time" id="jamDzuhur"></div>
+      <div><label><input type="checkbox" id="ashar"> Ashar</label> <input type="time" id="jamAshar"></div>
+      <div><label><input type="checkbox" id="maghrib"> Maghrib</label> <input type="time" id="jamMaghrib"></div>
+      <div><label><input type="checkbox" id="isya"> Isya</label> <input type="time" id="jamIsya"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Olahraga</legend>
+      <label><input type="checkbox" id="olahraga"> Ya</label>
+      <input type="time" id="jamOlahraga">
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Makan Sehat</legend>
+      <textarea id="menuMakan" rows="3" placeholder="Tuliskan menu makan sehat hari ini..."></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Belajar</legend>
+      <label><input type="checkbox" id="belajar"> Ya</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Bermasyarakat</legend>
+      <label><input type="checkbox" id="bermasyarakat"> Ya</label>
+      <input type="text" id="kegiatanMasyarakat" placeholder="Apa yang dilakukan?">
+    </fieldset>
+
+    <fieldset>
+      <legend>7. Tidur Cepat</legend>
+      <label><input type="checkbox" id="tidurCepat"> Ya</label>
+      <input type="time" id="jamTidur">
+    </fieldset>
+
+    <button type="submit">Simpan Jurnal</button>
+  </form>
+
+  <div id="hasilJurnal"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
