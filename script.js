@@ -1,6 +1,6 @@
-﻿document.getElementById('jurnalForm').addEventListener('submit', function (e) {
+﻿const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyTWzBfxAkG7qrdJF3cse3A_5OhLNCXui8F_EN41ZKiEakFnQOxClM2yMLSa5EqP_g/exec'; // 
+document.getElementById('jurnalForm').addEventListener('submit', function (e) {
   e.preventDefault();
-
   const data = {
     bangunPagi: document.getElementById('bangunPagi').checked,
     jamBangun: document.getElementById('jamBangun').value,
@@ -22,7 +22,22 @@
     tanggal: new Date().toLocaleDateString()
   };
 
-  localStorage.setItem('jurnalHariIni', JSON.stringify(data));
+  localStorage.setItem(fetch(SHEET_URL, {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => response.text())
+.then(result => {
+  alert("Data berhasil disimpan ke Google Sheet!");
+  tampilkanHasil(data);
+})
+.catch(error => {
+  alert("Gagal menyimpan ke Google Sheet.");
+  console.error(error);
+}););
   tampilkanHasil(data);
 });
 
